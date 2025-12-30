@@ -1,0 +1,44 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: RICAL1 - SAM Local API (Python 3.12) with PyCharm debugging via pydevd-pycharm.
+
+Globals:
+  Function:
+    Runtime: python3.12
+    Timeout: 60
+    MemorySize: 128
+    Tracing: Active
+    Environment:
+      Variables:
+        LOG_LEVEL: INFO
+        DEBUG: "false"
+        PYCHARM_DEBUG_HOST: "host.docker.internal"
+        PYCHARM_DEBUG_PORT: "5891"
+
+Resources:
+  ApiFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: src/
+      Handler: app.lambda_handler
+      Events:
+        ApiRoot:
+          Type: Api
+          Properties:
+            Path: /
+            Method: GET
+        Hello:
+          Type: Api
+          Properties:
+            Path: /hello
+            Method: GET
+        Health:
+          Type: Api
+          Properties:
+            Path: /health
+            Method: GET
+
+Outputs:
+  ApiUrl:
+    Description: "Local API URL"
+    Value: "http://127.0.0.1:3000/"

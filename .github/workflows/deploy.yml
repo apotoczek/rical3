@@ -1,0 +1,30 @@
+name: Deploy SAM
+
+on:
+  push:
+    branches: [ "main", "stage" ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - uses: aws-actions/setup-sam@v2
+      - uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ secrets.AWS_REGION }}
+      - name: Build
+        run: sam build
+      - name: Deploy (stage)
+        if: github.ref == 'refs/heads/stage'
+        run: |
+          sam deploy --stack-name sam-api-stage --capabilities CAPABILITY_IAM --no-fail-on-empty-changeset
+      - name: Deploy (prod)
+        if: github.ref == 'refs/heads/main'
+        run: |
+          sam deploy --stack-name sam-api-prod --capabilities CAPABILITY_IAM --no-fail-on-empty-changeset

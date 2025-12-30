@@ -1,0 +1,2 @@
+debugpy==1.8.1
+pydevd-pycharm~=253.0

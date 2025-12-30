@@ -1,0 +1,91 @@
+# =========================
+# AWS SAM
+# =========================
+.aws-sam/
+.aws-sam/**
+
+# Packaged / deployed templates
+packaged.yaml
+packaged.yml
+output.yaml
+output.yml
+
+# SAM local environment
+.env
+.env.*
+
+# =========================
+# AWS credentials (NEVER COMMIT)
+# =========================
+.aws/
+!/.aws/config.example
+!/.aws/credentials.example
+
+# =========================
+# Logs
+# =========================
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# =========================
+# OS / Editor
+# =========================
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# =========================
+# Python (if using Python Lambdas)
+# =========================
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+.eggs/
+.venv/
+venv/
+ENV/
+env/
+
+# =========================
+# Node.js (if using Node Lambdas)
+# =========================
+node_modules/
+dist/
+build/
+coverage/
+
+# =========================
+# Java (if using Java Lambdas)
+# =========================
+target/
+*.class
+*.jar
+*.war
+
+# =========================
+# Go (if using Go Lambdas)
+# =========================
+bin/
+*.exe
+*.test
+
+# =========================
+# Terraform (if used alongside SAM)
+# =========================
+.terraform/
+*.tfstate
+*.tfstate.*
+
+# =========================
+# Misc
+# =========================
+*.zip
+
+

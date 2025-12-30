@@ -1,0 +1,3 @@
+# Dev convenience requirements (repo root).
+# SAM packages dependencies from src/requirements.txt because template.yaml uses CodeUri: src/
+-r src/requirements.txt
