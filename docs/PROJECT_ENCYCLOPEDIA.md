@@ -1,7 +1,7 @@
 # Project Encyclopedia
 
 ## Overview
-RICAL1 is a minimal Python AWS Lambda HTTP API intended for local development with AWS SAM and reliable debugging via PyCharm.
+rical3 is a minimal Python AWS Lambda HTTP API intended for local development with AWS SAM and reliable debugging via PyCharm.
 
 ## Architecture
 - Entry point: `src/app.py` (`lambda_handler`)

@@ -19,8 +19,11 @@ def maybe_enable_debugpy(logger):
 
     host = os.environ.get("PYCHARM_DEBUG_HOST", "host.docker.internal")
     port = int(os.environ.get("PYCHARM_DEBUG_PORT", "5891"))
-
-    import pydevd_pycharm  # type: ignore
+    try:
+        import pydevd_pycharm  # type: ignore
+    except ImportError as e:
+        logger.warning("DEBUG=true but pydevd-pycharm is not installed in the Lambda build: %s", e)
+        return
 
     logger.warning("Connecting to PyCharm debug server at %s:%s ...", host, port)
     pydevd_pycharm.settrace(

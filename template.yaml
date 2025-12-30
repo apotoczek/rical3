@@ -1,6 +1,6 @@
 AWSTemplateFormatVersion: '2010-09-09'
 Transform: AWS::Serverless-2016-10-31
-Description: RICAL1 - SAM Local API (Python 3.12) with PyCharm debugging via pydevd-pycharm.
+Description: rical3 - SAM Local API (Python 3.12) with PyCharm debugging via pydevd-pycharm.
 
 Globals:
   Function:

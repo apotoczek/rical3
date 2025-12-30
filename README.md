@@ -1,4 +1,4 @@
-# RICAL1 — SAM Local Python API (PyCharm Debugging)
+# rical3 — SAM Local Python API (PyCharm Debugging)
 
 - **Python runtime:** 3.12
 - **Docs version:** `1.0.1` (see `docs/DOCS_VERSION.txt`)
@@ -45,3 +45,8 @@ curl http://127.0.0.1:3000/health
 ## README change log
 - 2025-12-29: Docs-as-artifacts (SemVer), added ADR log, debugging changelog, encyclopedia doc.
 - 2025-12-29: Moved Lambda packaged deps to `src/requirements.txt` to fix `No module named pydevd_pycharm`.
+
+## 2025-12-30
+- Replaced lingering legacy naming references with `rical3`.
+- Debugger attach now warns (instead of crashing) if `pydevd-pycharm` is missing.
+
