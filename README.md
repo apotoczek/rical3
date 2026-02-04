@@ -1,7 +1,7 @@
 # rical3 — SAM Local Python API (PyCharm Debugging)
 
 - **Python runtime:** 3.12
-- **Docs version:** `1.0.1` (see `docs/DOCS_VERSION.txt`)
+- **Docs version:** `1.0.3` (see `docs/DOCS_VERSION.txt`)
 
 ## Start here
 - Debugging runbook: `docs/debugging.md`
@@ -30,6 +30,9 @@ sam local start-api --port 3000
 - Host: `localhost`
 - Port: `5891`
 - Path mapping (ONE mapping only): local `<repo>/src` → remote `/var/task`
+- Ensure `pydevd-pycharm` matches your PyCharm build (pinned in `src/requirements.txt`).
+  - Example: PyCharm `2025.3.1` → `pydevd-pycharm~=253.29346.142`.
+  - Verify the packaged version: `python -c "import pydevd_pycharm; print(pydevd_pycharm.__version__)"`
 
 2) Run SAM:
 ```bash
@@ -74,3 +77,8 @@ pyenv environment is active before invoking the SAM CLI.
 - Replaced lingering legacy naming references with `rical3`.
 - Debugger attach now warns (instead of crashing) if `pydevd-pycharm` is missing.
 
+## 2025-12-31
+- Debugging: Pin `pydevd-pycharm` to the current PyCharm build to avoid debugger version mismatches.
+
+## 2025-12-31
+- Debugging: Align `pydevd-pycharm` with PyCharm `2025.3.1` (build `253.29346.142`).
