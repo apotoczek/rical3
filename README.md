@@ -42,6 +42,30 @@ DEBUG=true PYCHARM_DEBUG_PORT=5891 sam local start-api --port 3000
 curl http://127.0.0.1:3000/health
 ```
 
+## Local SAM smoke test
+
+To quickly verify that the project builds and the local API starts correctly,
+you can run a pyenv-aware smoke test that:
+
+- builds the SAM application
+- launches `sam local start-api`
+- calls the `/health` endpoint
+- fails fast if anything is misconfigured
+
+```bash
+make test-local PYENV_ENV=<pyenv-environment-name>
+```
+
+Example:
+
+```bash
+make test-local PYENV_ENV=rical3-py312
+```
+
+This uses `tools/test_local_sam.sh` under the hood and ensures the correct
+pyenv environment is active before invoking the SAM CLI.
+
+
 ## README change log
 - 2025-12-29: Docs-as-artifacts (SemVer), added ADR log, debugging changelog, encyclopedia doc.
 - 2025-12-29: Moved Lambda packaged deps to `src/requirements.txt` to fix `No module named pydevd_pycharm`.

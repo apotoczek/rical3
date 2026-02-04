@@ -10,3 +10,6 @@
 ## 2025-12-30
 - Docs/Config: Aligned remaining legacy naming references to `rical3`.
 - Debugging: Made debugger attach code tolerant of missing `pydevd-pycharm` (warns instead of crashing when DEBUG=true).
+
+## 2025-12-30
+- Added `make test-local` target for pyenv-aware SAM local build and `/health` smoke test.
