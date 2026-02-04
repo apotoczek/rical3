@@ -13,3 +13,8 @@
 
 ## 2025-12-30
 - Added `make test-local` target for pyenv-aware SAM local build and `/health` smoke test.
+
+## 2025-12-31
+- Debugging: Pinned `pydevd-pycharm` to the current PyCharm build to avoid debugger version mismatches.
+- Debugging: Aligned `pydevd-pycharm` with PyCharm `2025.3.1` (build `253.29346.142`).
+- Docs: Added a command to verify the packaged `pydevd-pycharm` version.

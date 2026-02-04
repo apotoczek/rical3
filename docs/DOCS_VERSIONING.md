@@ -3,7 +3,7 @@
 Docs are treated as **versioned artifacts**, independently from code.
 
 ## Current docs version
-- `1.0.1` (see `docs/DOCS_VERSION.txt`)
+- `1.0.3` (see `docs/DOCS_VERSION.txt`)
 
 ## SemVer rules
 - **MAJOR**: breaking doc structure/workflow changes
