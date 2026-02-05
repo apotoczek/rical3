@@ -1,6 +1,10 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+export PATH="$HOME/.pyenv/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+
 if [[ $# -lt 1 ]]; then
   echo "Usage: $0 <pyenv-environment-name>"
   exit 1
@@ -33,7 +37,7 @@ command -v pyenv >/dev/null || fail "pyenv not found"
 command -v sam >/dev/null || fail "AWS SAM CLI not found"
 command -v curl >/dev/null || fail "curl not found"
 
-if ! pyenv versions --bare | grep -qx "$PYENV_ENV"; then
+if ! pyenv prefix "$PYENV_ENV" >/dev/null 2>&1; then
   fail "pyenv environment '$PYENV_ENV' does not exist"
 fi
 

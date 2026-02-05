@@ -60,6 +60,11 @@ make test-local PYENV_ENV=<pyenv-environment-name>
 ```
 
 Example:
+```bash
+make test-local PYENV_ENV=rical3 SHELL=/bin/bash
+```
+
+Example:
 
 ```bash
 make test-local PYENV_ENV=rical3-py312
