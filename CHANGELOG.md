@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-02-04
+- Updated PyCharm debugger pin to `pydevd-pycharm~=253.30387.173` for PyCharm 2025.3.2.1.
+- Documented PyCharm path-mapping pitfall where debugger attaches but breakpoints do not bind.
+
 ## 2025-12-29
 - Docs: Versioned docs artifacts + SemVer policy in `docs/`.
 - Docs: ADR log in `docs/DECISIONS.md`.

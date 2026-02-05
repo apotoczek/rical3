@@ -1,2 +1,2 @@
+pydevd-pycharm~=253.30387.173
 debugpy==1.8.1
-pydevd-pycharm~=253.29346.142
